@@ -1,3 +1,7 @@
+DROP TABLE IF EXISTS homies_hash;
+DROP TABLE IF EXISTS posts;
+DROP TABLE IF EXISTS homies;
+
 CREATE TABLE homies (
 	user_id SERIAL PRIMARY KEY,
 	name VARCHAR(100),
@@ -18,12 +22,10 @@ CREATE TABLE posts (
 	user_id INT REFERENCES homies(user_id)
 );
 
-
---Dummy Data
 INSERT INTO homies (name, email, profile_img)
 VALUES 
 ('Jonathan', 'jon@than.com', 'https://tmssl.akamaized.net/images/portrait/originals/38232-1556523583.jpg'),
-('Josh','jmcc@nn.com', 'https://josh-mccann.com/images/pic11.JPG');
+('Josh', 'jmcc@nn.com', 'https://josh-mccann.com/images/pic11.JPG');
 
 INSERT INTO homies_hash (hash, user_id)
 VALUES ('password', 1),
@@ -31,8 +33,4 @@ VALUES ('password', 1),
 
 INSERT INTO posts (title, img_url, content, likes, user_id)
 VALUES ('Cute Dog', 'https://www.petguide.com/wp-content/uploads/2015/03/bernedoodle-11.jpg', 'Bernedoodles are cute', 0, 1),
-('Hot Dogs', 'https://static01.nyt.com/images/2019/05/21/dining/kwr-mexican-hot-dogs/kwr-mexican-hot-dogs-articleLarge.jpg', 'Hot dogs from Mexico', 0, 2); 
-
-select * from homies;
-select * from homies_hash;
-select * from posts;
+('Hot Dogs', 'https://static01.nyt.com/images/2019/05/21/dining/kwr-mexican-hot-dogs/kwr-mexican-hot-dogs-articleLarge.jpg', 'Hot dogs from Mexico', 0, 2);
