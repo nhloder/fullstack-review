@@ -1,3 +1,8 @@
+body {
+	/* background: url('https://josh-mccann.com/images/pic11.JPG');
+	background-size: cover; */
+	background: grey;
+ }
 .App {
   text-align: center;
 }
